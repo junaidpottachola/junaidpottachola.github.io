@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taking the typing out of vehicle check-in | Mohamed Junaid</title>
+  <meta name="description" content="Case study: an OCR reader for UAE vehicle registration cards that fills the CRM, a number-plate recognition API for all 7 emirates, a photo view check and AI-generated inspection reports, on self-hosted models.">
+  <meta name="author" content="Mohamed Junaid">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://junaidpottachola.github.io/work/ai-solutions.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mohamed Junaid">
+  <meta property="og:title" content="Taking the typing out of vehicle check-in | Mohamed Junaid">
+  <meta property="og:description" content="Case study: an OCR reader for UAE vehicle registration cards that fills the CRM, a number-plate recognition API for all 7 emirates, a photo view check and AI-generated inspection reports, on self-hosted models.">
+  <meta property="og:url" content="https://junaidpottachola.github.io/work/ai-solutions.html">
+  <meta property="og:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mohamed Junaid, Senior Full Stack Developer & Database Engineer, Abu Dhabi">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Taking the typing out of vehicle check-in | Mohamed Junaid">
+  <meta name="twitter:description" content="Case study: an OCR reader for UAE vehicle registration cards that fills the CRM, a number-plate recognition API for all 7 emirates, a photo view check and AI-generated inspection reports, on self-hosted models.">
+  <meta name="twitter:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f6f3ec'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='44' fill='%23a3461d'%3Ej%3C/text%3E%3C/svg%3E">
+
+  <script>
+    /* Apply saved theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohamed Junaid",
+  "jobTitle": "Senior Full Stack Developer & Database Engineer",
+  "url": "https://junaidpottachola.github.io/",
+  "image": "https://junaidpottachola.github.io/assets/profile.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abu Dhabi",
+    "addressCountry": "AE"
+  },
+  "knowsLanguage": [
+    "English",
+    "Malayalam"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/junaid-pottachola/",
+    "https://github.com/junaidpottachola"
+  ],
+  "knowsAbout": [
+    "C#",
+    "ASP.NET Core",
+    "Angular",
+    "Python",
+    "SQL Server",
+    "Oracle",
+    "PL/SQL",
+    "REST APIs",
+    "KPI dashboards",
+    "OCR",
+    "Computer vision",
+    "CRM and ERP integration"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Taking the typing out of vehicle check-in",
+  "description": "Case study: an OCR reader for UAE vehicle registration cards that fills the CRM, a number-plate recognition API for all 7 emirates, a photo view check and AI-generated inspection reports, on self-hosted models.",
+  "url": "https://junaidpottachola.github.io/work/ai-solutions.html",
+  "image": "https://junaidpottachola.github.io/assets/og-image.png",
+  "dateModified": "2026-11-15",
+  "author": {
+    "@type": "Person",
+    "name": "Mohamed Junaid",
+    "url": "https://junaidpottachola.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  </svg>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="../index.html">Mohamed Junaid</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li class="hide-sm"><a href="../index.html#experience">Experience</a></li>
+        <li class="hide-sm"><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../cv/Mohamed_Junaid_CV.pdf" download>CV</a></li>
+        <li><button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+          <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="crumb"><a href="../index.html#work">&larr; All work</a></p>
+        <p class="article-meta">AI for workshop operations &middot; German Experts, Abu Dhabi &middot; 2024 to now</p>
+        <h1>Taking the typing out of vehicle check-in</h1>
+        <p class="lede">Every visit to the workshop starts with someone copying a vehicle registration card into the CRM. That was the first thing I automated, and it grew into a small set of AI tools around the service desk.</p>
+      </header>
+
+      <dl class="tldr"><dt>Problem</dt><dd>Registration details were typed into the CRM by hand at every check-in, at the busiest point of the day.</dd><dt>What I built</dt><dd>An OCR reader for UAE registration cards, a number-plate recognition API, a photo view check and AI-written inspection reports.</dd><dt>Outcome</dt><dd>Registration data reaches SQL Server and the CRM without anyone typing it, and inspection reports come out consistent and ready for the customer.</dd></dl>
+
+      <h2>Context</h2><p>German Experts is a multi-brand luxury and EV service group with branches in Abu Dhabi and Dubai. The customer and vehicle record in the CRM drives everything that follows a visit: the job, the invoice, any contract, the report.</p><p>The registration card (the Mulkiya) is the most reliable source for that record, so it was the obvious place to start.</p>
+      <h2>The problem</h2><ul><li>Staff read each card and typed the details in. A wrong digit in a VIN or plate number travels all the way to invoices and contracts.</li><li>Inspection reports depended on whoever wrote them, so the quality varied.</li><li>Inspection photos sometimes showed the wrong side of the car, and nobody noticed until later.</li></ul>
+      <h2>What I did</h2><ul><li>Built the registration-card reader in Python on an open-source vision model. It corrects commonly confused digits, decodes the VIN and writes structured data into SQL Server and the CRM.</li><li>Built a number-plate recognition API in .NET, hosted on IIS, that reads plates from all seven emirates.</li><li>Built a view check that confirms an inspection photo shows the side of the vehicle it is supposed to.</li><li>Added AI-generated inspection reports to the CRM, written from technician inputs, with a secure page the customer can open.</li><li>Set up self-hosted agents that rewrite technician and advisor notes into clear, professional text.</li></ul>
+      <h2>How I approached it</h2><ul><li><strong>Start with the step that repeats most.</strong> Registration capture happens on every visit, so it pays back fastest.</li><li><strong>Fill the fields people already use.</strong> The reader writes into the CRM's own customer and vehicle records. Nobody had to learn a new screen.</li><li><strong>Keep the models in-house.</strong> They run on our own server, so customer data stays on the premises.</li><li><strong>Don't trust the model blindly.</strong> The reader checks digits and decodes the VIN before anything is saved.</li></ul>
+      <h2>How it fits together</h2>
+      <figure class="diagram">
+        <svg viewBox="0 0 400 366" role="img" aria-labelledby="dg-ai-t dg-ai-d"><title id="dg-ai-t">AI features: how the pieces connect</title><desc id="dg-ai-d">Four flows. A registration card image is read by a self-hosted vision model, and the structured data is written to SQL Server and the CRM. A vehicle image goes to a number-plate recognition API that covers all 7 emirates. An inspection photo goes to a view-check API that confirms the required side of the vehicle is shown. Technician inputs go to a language model that writes an inspection report, which the customer opens on a secure page.</desc><defs><marker id="dg-ai-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dg-head" d="M0 0 10 5 0 10z"/></marker></defs><text class="dg-lane" x="0" y="14" text-anchor="start">Registration card</text><rect class="dg-box" x="0" y="24" width="116" height="52" rx="3"/><text class="dg-t" x="58" y="47.0" text-anchor="middle">Card image</text><text class="dg-s" x="58" y="61.0" text-anchor="middle">Mulkiya</text><rect class="dg-box" x="142" y="24" width="116" height="52" rx="3"/><text class="dg-t" x="200" y="40.0" text-anchor="middle">Vision model</text><text class="dg-s" x="200" y="54.0" text-anchor="middle">self-hosted, OCR</text><text class="dg-s" x="200" y="68.0" text-anchor="middle">VIN + digit checks</text><line class="dg-edge" x1="118" y1="50" x2="139" y2="50" marker-end="url(#dg-ai-ah)"/><rect class="dg-box accent" x="284" y="24" width="116" height="52" rx="3"/><text class="dg-t" x="342" y="47.0" text-anchor="middle">SQL Server + CRM</text><text class="dg-s" x="342" y="61.0" text-anchor="middle">fields filled</text><line class="dg-edge" x1="260" y1="50" x2="281" y2="50" marker-end="url(#dg-ai-ah)"/><text class="dg-lane" x="0" y="110" text-anchor="start">Number plate</text><rect class="dg-box" x="0" y="120" width="116" height="52" rx="3"/><text class="dg-t" x="58" y="150.0" text-anchor="middle">Vehicle image</text><rect class="dg-box" x="142" y="120" width="116" height="52" rx="3"/><text class="dg-t" x="200" y="143.0" text-anchor="middle">Plate API</text><text class="dg-s" x="200" y="157.0" text-anchor="middle">.NET on IIS</text><line class="dg-edge" x1="118" y1="146" x2="139" y2="146" marker-end="url(#dg-ai-ah)"/><rect class="dg-box accent" x="284" y="120" width="116" height="52" rx="3"/><text class="dg-t" x="342" y="143.0" text-anchor="middle">Plate text</text><text class="dg-s" x="342" y="157.0" text-anchor="middle">all 7 emirates</text><line class="dg-edge" x1="260" y1="146" x2="281" y2="146" marker-end="url(#dg-ai-ah)"/><text class="dg-lane" x="0" y="206" text-anchor="start">Photo check</text><rect class="dg-box" x="0" y="216" width="116" height="52" rx="3"/><text class="dg-t" x="58" y="246.0" text-anchor="middle">Inspection photo</text><rect class="dg-box" x="142" y="216" width="116" height="52" rx="3"/><text class="dg-t" x="200" y="239.0" text-anchor="middle">View-check API</text><text class="dg-s" x="200" y="253.0" text-anchor="middle">which side?</text><line class="dg-edge" x1="118" y1="242" x2="139" y2="242" marker-end="url(#dg-ai-ah)"/><rect class="dg-box muted" x="284" y="216" width="116" height="52" rx="3"/><text class="dg-t" x="342" y="246.0" text-anchor="middle">Accept / retake</text><line class="dg-edge" x1="260" y1="242" x2="281" y2="242" marker-end="url(#dg-ai-ah)"/><text class="dg-lane" x="0" y="302" text-anchor="start">Inspection report</text><rect class="dg-box" x="0" y="312" width="116" height="52" rx="3"/><text class="dg-t" x="58" y="335.0" text-anchor="middle">Technician inputs</text><text class="dg-s" x="58" y="349.0" text-anchor="middle">in the CRM</text><rect class="dg-box" x="142" y="312" width="116" height="52" rx="3"/><text class="dg-t" x="200" y="335.0" text-anchor="middle">Language model</text><text class="dg-s" x="200" y="349.0" text-anchor="middle">writes report</text><line class="dg-edge" x1="118" y1="338" x2="139" y2="338" marker-end="url(#dg-ai-ah)"/><rect class="dg-box accent" x="284" y="312" width="116" height="52" rx="3"/><text class="dg-t" x="342" y="335.0" text-anchor="middle">Customer page</text><text class="dg-s" x="342" y="349.0" text-anchor="middle">secure link</text><line class="dg-edge" x1="260" y1="338" x2="281" y2="338" marker-end="url(#dg-ai-ah)"/></svg>
+        <figcaption>Four flows. Generic labels only; hosts and internal system names are left out on purpose.</figcaption>
+      </figure>
+      <h2>Where it landed</h2><ul><li>Registration data entry at check-in is automated.</li><li>Number-plate recognition covers all seven emirates.</li><li>Inspection reports are consistent and ready to send to the customer.</li><li>The models run on our own hardware, not a third-party service.</li></ul>
+      <p class="stack"><span>Built with</span> Python, Ollama, Qwen2.5-VL, OCR and computer vision, C# / .NET, IIS, SQL Server</p>
+      <p class="note">Written at the level of what the system does. No company code, data, screenshots or internal details.</p>
+
+      <nav class="pager" aria-label="More case studies">
+        <a href="contract-warranty-platform.html" rel="prev"><span>Previous</span>Contracts and warranties</a>
+        <a href="operational-dashboards.html" rel="next"><span>Next</span>Operational dashboards</a>
+      </nav>
+    </article>
+
+    <section class="block" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Get in touch</h2>
+      <div class="block-body">
+        <p>I'm open to senior full stack and database roles in Abu Dhabi, on-site or hybrid. Email is the quickest way to reach me.</p>
+        <p class="email-line"><a href="mailto:junaidpottachola@gmail.com">junaidpottachola@gmail.com</a> <button class="copy" type="button" data-copy="junaidpottachola@gmail.com" aria-label="Copy email address"><span class="btn-copy-label">copy</span></button></p>
+        <p class="link-row"><a href="https://www.linkedin.com/in/junaid-pottachola/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="https://github.com/junaidpottachola" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="../cv/Mohamed_Junaid_CV.pdf" download>CV (PDF)</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Mohamed Junaid, Abu Dhabi. Written and built by hand in plain HTML and CSS. Last updated <time datetime="2026-11-15">November 2026</time>.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The API behind three mobile apps | Mohamed Junaid</title>
+  <meta name="description" content="Case study: the backend REST APIs for a technician app, a customer app and a stock-count app, from specification and documentation to production release, kept fast on large SQL Server tables.">
+  <meta name="author" content="Mohamed Junaid">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://junaidpottachola.github.io/work/technician-app-apis.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mohamed Junaid">
+  <meta property="og:title" content="The API behind three mobile apps | Mohamed Junaid">
+  <meta property="og:description" content="Case study: the backend REST APIs for a technician app, a customer app and a stock-count app, from specification and documentation to production release, kept fast on large SQL Server tables.">
+  <meta property="og:url" content="https://junaidpottachola.github.io/work/technician-app-apis.html">
+  <meta property="og:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mohamed Junaid, Senior Full Stack Developer & Database Engineer, Abu Dhabi">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The API behind three mobile apps | Mohamed Junaid">
+  <meta name="twitter:description" content="Case study: the backend REST APIs for a technician app, a customer app and a stock-count app, from specification and documentation to production release, kept fast on large SQL Server tables.">
+  <meta name="twitter:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f6f3ec'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='44' fill='%23a3461d'%3Ej%3C/text%3E%3C/svg%3E">
+
+  <script>
+    /* Apply saved theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohamed Junaid",
+  "jobTitle": "Senior Full Stack Developer & Database Engineer",
+  "url": "https://junaidpottachola.github.io/",
+  "image": "https://junaidpottachola.github.io/assets/profile.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abu Dhabi",
+    "addressCountry": "AE"
+  },
+  "knowsLanguage": [
+    "English",
+    "Malayalam"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/junaid-pottachola/",
+    "https://github.com/junaidpottachola"
+  ],
+  "knowsAbout": [
+    "C#",
+    "ASP.NET Core",
+    "Angular",
+    "Python",
+    "SQL Server",
+    "Oracle",
+    "PL/SQL",
+    "REST APIs",
+    "KPI dashboards",
+    "OCR",
+    "Computer vision",
+    "CRM and ERP integration"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The API behind three mobile apps",
+  "description": "Case study: the backend REST APIs for a technician app, a customer app and a stock-count app, from specification and documentation to production release, kept fast on large SQL Server tables.",
+  "url": "https://junaidpottachola.github.io/work/technician-app-apis.html",
+  "image": "https://junaidpottachola.github.io/assets/og-image.png",
+  "dateModified": "2026-11-15",
+  "author": {
+    "@type": "Person",
+    "name": "Mohamed Junaid",
+    "url": "https://junaidpottachola.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  </svg>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="../index.html">Mohamed Junaid</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li class="hide-sm"><a href="../index.html#experience">Experience</a></li>
+        <li class="hide-sm"><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../cv/Mohamed_Junaid_CV.pdf" download>CV</a></li>
+        <li><button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+          <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="crumb"><a href="../index.html#work">&larr; All work</a></p>
+        <p class="article-meta">Mobile-app backend &middot; German Experts, Abu Dhabi &middot; 2024 to now</p>
+        <h1>The API behind three mobile apps</h1>
+        <p class="lede">Technicians, customers and stock-count staff each have their own app. All three talk to the same backend, and that backend is mine to specify, build and keep fast.</p>
+      </header>
+
+      <dl class="tldr"><dt>Problem</dt><dd>Three mobile apps needed dependable, documented APIs, and some screens slowed down on very large tables.</dd><dt>What I built</dt><dd>The REST APIs for all three apps, specified and documented before build, then released to production with the mobile team.</dd><dt>Outcome</dt><dd>Faster screens, fewer round trips, cleaner vehicle data and an API the mobile team can build against without guessing.</dd></dl>
+
+      <h2>Context</h2><p>The apps cover daily work in the workshop: technicians logging time and work, customers following their vehicle, and staff counting stock. They all sit on the same SQL Server databases, some of which are very large.</p>
+      <h2>The problem</h2><ul><li>Each app needed clear APIs for time tracking, work logs and vehicle inspections.</li><li>Some screens needed several calls to load, and large tables made a few screens and the login slow.</li><li>Vehicle master data had invalid entries that caused problems further down the line.</li></ul>
+      <h2>What I did</h2><ul><li>Specified, built and documented the REST APIs for the technician, customer and stock-count apps.</li><li>Merged the job-tracking calls into a single endpoint.</li><li>Traced and fixed the slow stock-count screens and the slow login.</li><li>Added validation for vehicle records.</li><li>Worked with the mobile team on releases, from test builds to production.</li></ul>
+      <h2>How I approached it</h2><ul><li><strong>Write the contract first.</strong> Each API is specified and documented before it is built, so mobile and backend work can run in parallel.</li><li><strong>One screen, one call.</strong> Screens that needed several requests get one endpoint shaped for them.</li><li><strong>Fix the cause.</strong> Slow screens were traced to the queries and data behind them, not papered over in the app.</li><li><strong>Keep logic close to the data.</strong> Business queries run as SQL Server stored procedures.</li></ul>
+      <h2>How it fits together</h2>
+      <figure class="diagram">
+        <svg viewBox="0 0 400 348" role="img" aria-labelledby="dg-api-t dg-api-d"><title id="dg-api-t">Mobile-app backend: request flow</title><desc id="dg-api-d">Four clients (technician app, customer app, stock-count app and a job-tracking screen) call documented REST APIs for time tracking, work logs and vehicle inspections. The APIs run SQL Server stored procedures against large SQL Server tables.</desc><defs><marker id="dg-api-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dg-head" d="M0 0 10 5 0 10z"/></marker></defs><text class="dg-lane" x="0" y="12" text-anchor="start">Clients</text><rect class="dg-box" x="0" y="22" width="94" height="46" rx="3"/><text class="dg-t" x="47" y="42.0" text-anchor="middle">Technician</text><text class="dg-s" x="47" y="56.0" text-anchor="middle">app</text><line class="dg-edge" x1="47" y1="70" x2="47" y2="102" marker-end="url(#dg-api-ah)"/><rect class="dg-box" x="102" y="22" width="94" height="46" rx="3"/><text class="dg-t" x="149" y="42.0" text-anchor="middle">Customer</text><text class="dg-s" x="149" y="56.0" text-anchor="middle">app</text><line class="dg-edge" x1="149" y1="70" x2="149" y2="102" marker-end="url(#dg-api-ah)"/><rect class="dg-box" x="204" y="22" width="94" height="46" rx="3"/><text class="dg-t" x="251" y="42.0" text-anchor="middle">Stock-count</text><text class="dg-s" x="251" y="56.0" text-anchor="middle">app</text><line class="dg-edge" x1="251" y1="70" x2="251" y2="102" marker-end="url(#dg-api-ah)"/><rect class="dg-box" x="306" y="22" width="94" height="46" rx="3"/><text class="dg-t" x="353" y="42.0" text-anchor="middle">Job-tracking</text><text class="dg-s" x="353" y="56.0" text-anchor="middle">screen</text><line class="dg-edge" x1="353" y1="70" x2="353" y2="102" marker-end="url(#dg-api-ah)"/><rect class="dg-box accent" x="0" y="106" width="400" height="64" rx="3"/><text class="dg-t" x="200" y="128.0" text-anchor="middle">REST APIs</text><text class="dg-s" x="200" y="142.0" text-anchor="middle">specified and documented before build</text><text class="dg-s" x="200" y="156.0" text-anchor="middle">time tracking · work logs · inspections</text><line class="dg-edge" x1="200" y1="172" x2="200" y2="202" marker-end="url(#dg-api-ah)"/><rect class="dg-box" x="90" y="206" width="220" height="46" rx="3"/><text class="dg-t" x="200" y="233.0" text-anchor="middle">Stored procedures</text><line class="dg-edge" x1="200" y1="254" x2="200" y2="284" marker-end="url(#dg-api-ah)"/><rect class="dg-box" x="90" y="288" width="220" height="54" rx="3"/><text class="dg-t" x="200" y="312.0" text-anchor="middle">SQL Server</text><text class="dg-s" x="200" y="326.0" text-anchor="middle">large production tables</text></svg>
+        <figcaption>Request flow from the apps to SQL Server. Generic labels only.</figcaption>
+      </figure>
+      <h2>Where it landed</h2><ul><li>Stock-count and login performance problems resolved.</li><li>Job tracking is served by one endpoint instead of several.</li><li>Vehicle records are validated before they are saved.</li><li>Every API is documented for the mobile team.</li></ul>
+      <p class="stack"><span>Built with</span> C#, ASP.NET Web API, REST, SQL Server, stored procedures</p>
+      <p class="note">Written at the level of what the system does. No company code, data, screenshots or internal details.</p>
+
+      <nav class="pager" aria-label="More case studies">
+        <a href="operational-dashboards.html" rel="prev"><span>Previous</span>Operational dashboards</a>
+        <a href="contract-warranty-platform.html" rel="next"><span>Next</span>Contracts and warranties</a>
+      </nav>
+    </article>
+
+    <section class="block" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Get in touch</h2>
+      <div class="block-body">
+        <p>I'm open to senior full stack and database roles in Abu Dhabi, on-site or hybrid. Email is the quickest way to reach me.</p>
+        <p class="email-line"><a href="mailto:junaidpottachola@gmail.com">junaidpottachola@gmail.com</a> <button class="copy" type="button" data-copy="junaidpottachola@gmail.com" aria-label="Copy email address"><span class="btn-copy-label">copy</span></button></p>
+        <p class="link-row"><a href="https://www.linkedin.com/in/junaid-pottachola/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="https://github.com/junaidpottachola" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="../cv/Mohamed_Junaid_CV.pdf" download>CV (PDF)</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Mohamed Junaid, Abu Dhabi. Written and built by hand in plain HTML and CSS. Last updated <time datetime="2026-11-15">November 2026</time>.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

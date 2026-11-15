@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service contracts, from price book to renewal | Mohamed Junaid</title>
+  <meta name="description" content="Case study: extending CRM modules for service contracts and warranties with per-brand pricing, date and mileage-based renewals, validation rules, installment plans and PDF quotations and contracts.">
+  <meta name="author" content="Mohamed Junaid">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://junaidpottachola.github.io/work/contract-warranty-platform.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mohamed Junaid">
+  <meta property="og:title" content="Service contracts, from price book to renewal | Mohamed Junaid">
+  <meta property="og:description" content="Case study: extending CRM modules for service contracts and warranties with per-brand pricing, date and mileage-based renewals, validation rules, installment plans and PDF quotations and contracts.">
+  <meta property="og:url" content="https://junaidpottachola.github.io/work/contract-warranty-platform.html">
+  <meta property="og:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mohamed Junaid, Senior Full Stack Developer & Database Engineer, Abu Dhabi">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Service contracts, from price book to renewal | Mohamed Junaid">
+  <meta name="twitter:description" content="Case study: extending CRM modules for service contracts and warranties with per-brand pricing, date and mileage-based renewals, validation rules, installment plans and PDF quotations and contracts.">
+  <meta name="twitter:image" content="https://junaidpottachola.github.io/assets/og-image.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f6f3ec'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='44' fill='%23a3461d'%3Ej%3C/text%3E%3C/svg%3E">
+
+  <script>
+    /* Apply saved theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohamed Junaid",
+  "jobTitle": "Senior Full Stack Developer & Database Engineer",
+  "url": "https://junaidpottachola.github.io/",
+  "image": "https://junaidpottachola.github.io/assets/profile.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abu Dhabi",
+    "addressCountry": "AE"
+  },
+  "knowsLanguage": [
+    "English",
+    "Malayalam"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/junaid-pottachola/",
+    "https://github.com/junaidpottachola"
+  ],
+  "knowsAbout": [
+    "C#",
+    "ASP.NET Core",
+    "Angular",
+    "Python",
+    "SQL Server",
+    "Oracle",
+    "PL/SQL",
+    "REST APIs",
+    "KPI dashboards",
+    "OCR",
+    "Computer vision",
+    "CRM and ERP integration"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Service contracts, from price book to renewal",
+  "description": "Case study: extending CRM modules for service contracts and warranties with per-brand pricing, date and mileage-based renewals, validation rules, installment plans and PDF quotations and contracts.",
+  "url": "https://junaidpottachola.github.io/work/contract-warranty-platform.html",
+  "image": "https://junaidpottachola.github.io/assets/og-image.png",
+  "dateModified": "2026-11-15",
+  "author": {
+    "@type": "Person",
+    "name": "Mohamed Junaid",
+    "url": "https://junaidpottachola.github.io/"
+  }
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  </svg>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="../index.html">Mohamed Junaid</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#work">Work</a></li>
+        <li class="hide-sm"><a href="../index.html#experience">Experience</a></li>
+        <li class="hide-sm"><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../cv/Mohamed_Junaid_CV.pdf" download>CV</a></li>
+        <li><button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+          <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="crumb"><a href="../index.html#work">&larr; All work</a></p>
+        <p class="article-meta">Contracts and warranties &middot; German Experts, Abu Dhabi &middot; 2024 to now</p>
+        <h1>Service contracts, from price book to renewal</h1>
+        <p class="lede">The group sells service contracts and warranties across several luxury and EV brands. I took over the CRM module that handles them and extended it, rather than starting again.</p>
+      </header>
+
+      <dl class="tldr"><dt>Problem</dt><dd>Contracts across several brands needed consistent pricing, renewals, payment options and documents.</dd><dt>What I built</dt><dd>A contract calculator, and extensions to the warranty and service contract module in the CRM.</dd><dt>Outcome</dt><dd>One flow from price book to quotation, contract and renewal, with PDF documents for the customer.</dd></dl>
+
+      <h2>Context</h2><p>Every brand prices its contracts differently, and a contract can come due by date or by mileage, whichever happens first.</p>
+      <h2>The problem</h2><ul><li>Prices, renewal rules and payment options varied by brand and were hard to keep consistent.</li><li>Quotations needed limits and installment options applied the same way every time.</li></ul>
+      <h2>What I did</h2><ul><li>Built the contract calculator.</li><li>Extended the warranty and service contract module with per-brand price books, date and mileage renewals, validation rules, SQL functions, installment plans and PDF quotations and contracts.</li></ul>
+      <h2>How I approached it</h2><ul><li><strong>Prices are data.</strong> Price books are uploaded per brand instead of being written into code.</li><li><strong>Two renewal triggers.</strong> A contract comes due by date or by mileage.</li><li><strong>Rules live in the quote.</strong> Validation rules and installment plans apply when the quotation is created, not after.</li><li><strong>Extend, don't rewrite.</strong> The existing module kept working while it grew.</li></ul>
+      <h2>How it fits together</h2>
+      <figure class="diagram">
+        <svg viewBox="0 0 400 400" role="img" aria-labelledby="dg-contract-t dg-contract-d"><title id="dg-contract-t">Contract lifecycle (illustrative)</title><desc id="dg-contract-d">Price books are uploaded per brand and feed the contract calculator. The calculator produces a quotation, subject to validation rules and an installment plan, then a contract with a PDF. An active contract becomes due for renewal by date or by mileage, and the renewal goes back through the calculator.</desc><defs><marker id="dg-contract-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="dg-head" d="M0 0 10 5 0 10z"/></marker></defs><rect class="dg-box" x="60" y="6" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="26.0" text-anchor="middle">Price book</text><text class="dg-s" x="180" y="40.0" text-anchor="middle">uploaded per brand</text><rect class="dg-box accent" x="60" y="72" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="99.0" text-anchor="middle">Contract calculator</text><line class="dg-edge" x1="180" y1="54" x2="180" y2="69" marker-end="url(#dg-contract-ah)"/><rect class="dg-box" x="60" y="138" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="158.0" text-anchor="middle">Quotation</text><text class="dg-s" x="180" y="172.0" text-anchor="middle">validation rules · installments</text><line class="dg-edge" x1="180" y1="120" x2="180" y2="135" marker-end="url(#dg-contract-ah)"/><rect class="dg-box" x="60" y="204" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="224.0" text-anchor="middle">Contract</text><text class="dg-s" x="180" y="238.0" text-anchor="middle">PDF generated</text><line class="dg-edge" x1="180" y1="186" x2="180" y2="201" marker-end="url(#dg-contract-ah)"/><rect class="dg-box" x="60" y="270" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="297.0" text-anchor="middle">Active contract</text><line class="dg-edge" x1="180" y1="252" x2="180" y2="267" marker-end="url(#dg-contract-ah)"/><rect class="dg-box accent" x="60" y="336" width="240" height="46" rx="3"/><text class="dg-t" x="180" y="356.0" text-anchor="middle">Renewal due</text><text class="dg-s" x="180" y="370.0" text-anchor="middle">by date or mileage</text><line class="dg-edge" x1="180" y1="318" x2="180" y2="333" marker-end="url(#dg-contract-ah)"/><path class="dg-edge" d="M 300 359 H 352 V 95 H 304" marker-end="url(#dg-contract-ah)"/><text class="dg-lane" x="358" y="232" text-anchor="start">renew</text></svg>
+        <figcaption>Illustrative contract lifecycle. Generic states; no customer or pricing data.</figcaption>
+      </figure>
+      <h2>Where it landed</h2><ul><li>Pricing for each brand is managed through uploaded price books.</li><li>Renewals are triggered by date or by mileage.</li><li>Quotations and contracts are generated as PDFs.</li></ul>
+      <p class="stack"><span>Built with</span> C# / .NET, SQL Server, SQL functions, CRM workflows and validation rules, PDF generation</p>
+      <p class="note">Written at the level of what the system does. No company code, data, screenshots or internal details.</p>
+
+      <nav class="pager" aria-label="More case studies">
+        <a href="technician-app-apis.html" rel="prev"><span>Previous</span>Mobile-app backend</a>
+        <a href="ai-solutions.html" rel="next"><span>Next</span>AI for workshop operations</a>
+      </nav>
+    </article>
+
+    <section class="block" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Get in touch</h2>
+      <div class="block-body">
+        <p>I'm open to senior full stack and database roles in Abu Dhabi, on-site or hybrid. Email is the quickest way to reach me.</p>
+        <p class="email-line"><a href="mailto:junaidpottachola@gmail.com">junaidpottachola@gmail.com</a> <button class="copy" type="button" data-copy="junaidpottachola@gmail.com" aria-label="Copy email address"><span class="btn-copy-label">copy</span></button></p>
+        <p class="link-row"><a href="https://www.linkedin.com/in/junaid-pottachola/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="https://github.com/junaidpottachola" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="../cv/Mohamed_Junaid_CV.pdf" download>CV (PDF)</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Mohamed Junaid, Abu Dhabi. Written and built by hand in plain HTML and CSS. Last updated <time datetime="2026-11-15">November 2026</time>.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
